@@ -4,7 +4,7 @@
 // Winning is defined as doubling your original purse.
 // After every loss, the stratedy is to double your former bet in order to win back all losses from the previous bet.
 // We will play until we lose all our money or double the beginning purse.
-// The odds of winning a single bet on black is 18/37 = 0.48648648648649.
+// The odds of winning a single bet on black is 18/37 = 0.48649.
 // This project will play multiple games in order to get a large sample size in order to more accurately portray 
 // the odds of winning in roulette with this strategy.
 
@@ -23,8 +23,8 @@ $howmany = 1000;
 do{
 	
 	// Setting the beginning variables for each game.
-	$beginpurse = 1000;
 	$purse = 1000;
+	$beginpurse = $purse;
 	$win = 0.48649;
 	$bet = 1;
 

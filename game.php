@@ -22,8 +22,11 @@ do{
 			$spin = ((mt_rand(0,100000))/100000);
 			// If the spin is black (between 0 and .48649), we win. We add our bet to the purse. 
 			// Else, we lose. We subtract our bet from the purse.
+			
 			echo "Your current bet is {$bet}\n";
 			echo "Your current purse is {$purse}\n";
+			echo "You big purse is " . ($bigpurse-($beginpurse-$purse)) . PHP_EOL;
+			
 			if($spin <= $win) {
 				$purse += $bet;
 				$bet = 1;
@@ -64,7 +67,7 @@ do{
 }while($totalplays < $howmany);
 
 echo "Your final purse is {$bigpurse}\n";
-echo "The lowest your purse got was {$lowpurse}\n";
-echo "The highest your purse got was {$highpurse}\n";
+echo "The lowest value of your purse was {$lowpurse}\n";
+echo "The highest value of your purse was {$highpurse}\n";
 	
 ?>

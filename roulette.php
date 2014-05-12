@@ -54,13 +54,12 @@ do{
 			// Doubles the bet if we lose.
 			if($bet <75) {
 				$bet *= 2;
+				// Set to reflect common $75 max bid on most roulette tables
 				if($bet > 75) {
-					// Set to reflect common $75 max bid on most roulette tables
 					$bet = 75;
-				}
+				}		
 			}
 		}
-
 
 	}while($purse >= 0 && $purse <= (2 * $beginpurse));
 

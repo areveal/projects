@@ -1,8 +1,8 @@
 <?php
 
-// This project is designed to simulate the odds of winning black in European style roulette with the double bet strategy.
+// This project is designed to simulate the odds of winning in European style roulette with the double bet, or Martingale, strategy.
 // Winning is defined as doubling your original purse.
-// After every loss, the stratedy is to double your former bet in order to win back all losses from the previous bet.
+// After every loss, the strategy is to double your former bet in order to win back all losses from the previous bet.
 // We will play until we lose all our money or double the beginning purse.
 // The odds of winning a single bet on black is 18/37 = 0.48649.
 // This project will play multiple games in order to get a large sample size in order to more accurately portray 
@@ -23,7 +23,7 @@ $howmany = 1000;
 do{
 	
 	// Setting the beginning variables for each game.
-	$purse = 1000;
+	$purse = 20;
 	$beginpurse = $purse;
 	$win = 0.48649;
 	$bet = 1;

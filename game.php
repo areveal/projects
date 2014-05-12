@@ -1,10 +1,10 @@
 <?php
 
 $totalplays = 0;
-$howmany = 200;
+$howmany = 1;
 $bigpurse = 200;
-$highpurse =200;
-$lowpurse = 200;
+$highpurse = $bigpurse;
+$lowpurse = $bigpurse;
 
 do{
 
@@ -22,22 +22,24 @@ do{
 			$spin = ((mt_rand(0,100000))/100000);
 			// If the spin is black (between 0 and .48649), we win. We add our bet to the purse. 
 			// Else, we lose. We subtract our bet from the purse.
+			echo "Your current bet is {$bet}\n";
+			echo "Your current purse is {$purse}\n";
 			if($spin <= $win) {
 				$purse += $bet;
-				$bet = 1;	
+				$bet = 1;
+				echo "You won! ";	
 			} else {
 				$purse -= $bet;
+				echo "You lost! ";
+				$bet *= 2;
 				// Doubles the bet if we lose.
-				if($bet <75) {
-					$bet *= 2;
-					// Set to reflect common $75 max bid on most roulette tables
-					if($bet > 75) {
-						$bet = 75;
-					}		
-				}
+				// Set to reflect common $75 max bid on most roulette tables
+				if($bet > $purse) {
+					$bet = $purse;
+				}		
 			}
 
-		}while($purse >= 0 && $purse <= (2 * $beginpurse));
+		}while($purse > 0 && $purse <= (2 * $beginpurse));
 
 			
 		if($purse >= (2 * $beginpurse)) {
@@ -56,6 +58,7 @@ do{
 
 	} else {
 		echo "You have no more money to bet.\n";
+		$totalplays = $howmany;
 	}
 
 }while($totalplays < $howmany);

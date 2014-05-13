@@ -24,7 +24,6 @@ do{
 			// Else, we lose. We subtract our bet from the purse.
 			
 			echo "Your current bet is {$bet}\n";
-			echo "Your current purse is {$purse}\n";
 			echo "You big purse is " . ($bigpurse-($beginpurse-$purse)) . PHP_EOL;
 			
 			if($spin <= $win) {
@@ -42,7 +41,9 @@ do{
 				}		
 			}
 
-		}while($purse > 0 && $purse <= (2 * $beginpurse));
+			echo "Your current purse is {$purse}\n";
+
+		}while($purse > 0 && $purse < (2 * $beginpurse));
 
 			
 		if($purse >= (2 * $beginpurse)) {
@@ -51,7 +52,7 @@ do{
 				$highpurse = $bigpurse;
 			}
 		} else {
-			$bigpurse -= $beginpurse;
+			$bigpurse += ($purse - $beginpurse);
 			if($bigpurse < $lowpurse) {
 				$lowpurse = $bigpurse;
 			}

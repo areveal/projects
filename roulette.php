@@ -23,7 +23,7 @@ $howmany = 1000;
 do{
 	
 	// Setting the beginning variables for each game.
-	$purse = 20;
+	$purse = 1000;
 	$beginpurse = $purse;
 	$win = 0.48649;
 	$bet = 1;
@@ -61,27 +61,11 @@ do{
 			}
 		}
 
-	}while($purse >= 0 && $purse <= (2 * $beginpurse));
+	}while($purse >= 0 && $purse < (2 * $beginpurse));
 
 	// The game will reset and repeat {$howmany} times and track the total wins and losses
 
-	
-
-	//this is the code from the first project used to test the program's functionability
-	/*
-	if($purse >= (2 * $beginpurse)) {
-		echo "You doubled your original purse!\n";
-	} else {
-		echo "You lost all your money! Sorry!\n";
-	}
-	echo "Your longest black hit streak was {$bigblack}!!\n";
-	echo "Your longest non black streak was {$bigred}!!\n";
-	*/
-
-
-	
-
-
+		
 	// Did we win or lose?
 	if($purse >= (2 * $beginpurse)) {
 		$totalwins++;

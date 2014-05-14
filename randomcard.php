@@ -15,31 +15,28 @@ do {
 	$suit = array_rand($deck);
 	
 	// We need to check to see if the current suit has any cards left
-	if(!empty($deck["$suit"])) {
-		
-		// Pick a card
-		$card = $deck["$suit"][array_rand($deck["$suit"])];
-		 echo "$card of $suit\n";
-
-		// Remove the card from the deck
-		if($card == 'Jack') {
-			unset($deck[$suit][9]);
-		} elseif($card == 'Queen') {
-			unset($deck[$suit][10]);
-		} elseif($card == 'King') {
-			unset($deck[$suit][11]);
-		} elseif($card == 'Ace') {
-			unset($deck[$suit][12]);
-		} else {
-			unset($deck[$suit][$card-2]);
-		}
-
-
-		// Show the remaining cards in the deck
-		//print_r($deck);
-
-		echo "There are " . (count($deck['spades']) + count($deck['hearts']) + count($deck['clubs']) +count($deck['diamonds'])) . " cards left in the deck.\n";
+	if(empty($deck["$suit"])) {
+		continue;
 	}
+
+	// Pick a card
+	$card = $deck["$suit"][array_rand($deck["$suit"])];
+	 echo "$card of $suit\n";
+	// Remove the card from the deck
+	if($card == 'Jack') {
+		unset($deck[$suit][9]);
+	} elseif($card == 'Queen') {
+		unset($deck[$suit][10]);
+	} elseif($card == 'King') {
+		unset($deck[$suit][11]);
+	} elseif($card == 'Ace') {
+		unset($deck[$suit][12]);
+	} else {
+		unset($deck[$suit][$card-2]);
+	}
+	// Show the remaining cards in the deck
+	echo "There are " . (count($deck['spades']) + count($deck['hearts']) + count($deck['clubs']) +count($deck['diamonds'])) . " cards left in the deck.\n";
+
 
 
 }while(!empty($deck['spades'])||!empty($deck['hearts'])||!empty($deck['clubs'])||!empty($deck['diamonds']));

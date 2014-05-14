@@ -8,6 +8,15 @@
 // This project will play multiple games in order to get a large sample size in order to more accurately portray 
 // the odds of winning in roulette with this strategy.
 
+echo "This project is designed to simulate the odds of winning in European style roulette with the double bet, or Martingale, strategy.
+Winning is defined as doubling your original purse.
+After every loss, the strategy is to double your former bet in order to win back all losses from the previous bet.
+We will play until we lose all our money or double the beginning purse.
+The odds of wning a single bet on black is 18/37 = 0.48649.
+This project will play multiple games in order to get a large sample size in order to more accurately portray
+the odds of winning in roulette with this strategy.\n\n";
+
+
 
 // Setting the counters.
 $totalwins = 0;
@@ -17,8 +26,9 @@ $blackhit = 0;
 $bigblack = 0;
 $redhit = 0;
 $bigred = 0;
-$howmany = 1000;
-
+echo "How many times would you like the experiment to run? \n";
+$howmany = fgets(STDIN);
+echo "If the test is taking too long feel free to exit out with 'Control + C'.\n";
 // Runs the test {$howmany} times.
 do{
 	

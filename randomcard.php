@@ -2,10 +2,10 @@
 
 // Create the deck
 $deck = [
-	'spades' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
-	'hearts' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
-	'diamonds' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
-	'clubs' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace']
+	'Spades' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
+	'Hearts' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
+	'Diamonds' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
+	'Clubs' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace']
 ];
 
 // This will run as long as the deck has cards remaining
@@ -22,7 +22,8 @@ do {
 	// Pick a card
 	$card = $deck["$suit"][array_rand($deck["$suit"])];
 	 echo "$card of $suit\n";
-	// Remove the card from the deck
+	// Remove the card from the deck using the value of its index
+//Let's turn this into a switch!!
 	if($card == 'Jack') {
 		unset($deck[$suit][9]);
 	} elseif($card == 'Queen') {
@@ -35,10 +36,10 @@ do {
 		unset($deck[$suit][$card-2]);
 	}
 	// Show the remaining cards in the deck
-	echo "There are " . (count($deck['spades']) + count($deck['hearts']) + count($deck['clubs']) +count($deck['diamonds'])) . " cards left in the deck.\n";
+	//echo "There are " . (count($deck['Spades']) + count($deck['Hearts']) + count($deck['Clubs']) +count($deck['Diamonds'])) . " cards left in the deck.\n";
 
 
 
-}while(!empty($deck['spades'])||!empty($deck['hearts'])||!empty($deck['clubs'])||!empty($deck['diamonds']));
+}while(!empty($deck['Spades'])||!empty($deck['Hearts'])||!empty($deck['Clubs'])||!empty($deck['Diamonds']));
 
 ?>

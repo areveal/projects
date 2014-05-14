@@ -8,7 +8,7 @@ $deck = [
 	'clubs' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace']
 ];
 
-// This will run as long as the deck has cards remaining.
+// This will run as long as the deck has cards remaining
 do {
 
 	// Pick a suit from the deck
@@ -16,6 +16,8 @@ do {
 	
 	// We need to check to see if the current suit has any cards left
 	if(!empty($deck["$suit"])) {
+		
+		// Pick a card
 		$card = $deck["$suit"][array_rand($deck["$suit"])];
 		 echo "$card of $suit\n";
 
@@ -34,7 +36,9 @@ do {
 
 
 		// Show the remaining cards in the deck
-		print_r($deck);
+		//print_r($deck);
+
+		echo "There are " . (count($deck['spades']) + count($deck['hearts']) + count($deck['clubs']) +count($deck['diamonds'])) . " cards left in the deck.\n";
 	}
 
 

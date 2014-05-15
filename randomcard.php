@@ -36,7 +36,7 @@ do {
 		unset($deck[$suit][$card-2]);
 	}
 	// Show the remaining cards in the deck
-	//echo "There are " . (count($deck['Spades']) + count($deck['Hearts']) + count($deck['Clubs']) +count($deck['Diamonds'])) . " cards left in the deck.\n";
+	echo "There are " . (count($deck['Spades']) + count($deck['Hearts']) + count($deck['Clubs']) +count($deck['Diamonds'])) . " cards left in the deck.\n";
 
 
 

@@ -1,14 +1,35 @@
 <?php
 
+/*function removecard($deck,$card) {
+	switch ($card) {
+			case 'Jack':
+			unset($deck[$suit][9]);
+			break;
+			case 'Queen':
+			unset($deck[$suit][10]);
+			break;
+			case 'King':
+			unset($deck[$suit][11]);
+			break;
+			case 'Ace':
+			unset($deck[$suit][12]);
+			break;
+			default:
+			unset($deck[$suit][$card]);
+			break;
+		}
+}
+*/
+
 $purse = 1;
 
 // get your deck
 
 $deck = [
-	'Spades' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
-	'Hearts' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
-	'Diamonds' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
-	'Clubs' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace']
+'Spades' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
+'Hearts' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
+'Diamonds' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'],
+'Clubs' => [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace']
 ];
 
 // loop within one deck shuffle (# of cards left in deck greater than 20)
@@ -49,69 +70,69 @@ while((count($deck['Spades']) + count($deck['Hearts']) + count($deck['Clubs']) +
 			
 			// adding the card values to the hand.
 			switch ($card) {
-			case 'Jack':
+				case 'Jack':
 				$playertotal += 10;
 				break;
-			case 'Queen':
+				case 'Queen':
 				$playertotal += 10;
 				break;
-			case 'King':
+				case 'King':
 				$playertotal += 10;
 				break;
-			case 'Ace':
+				case 'Ace':
 				if($playertotal > 10) {
 					$playertotal += 1;
 				} else {
 					$playertotal += 11;
 				}
 				break;
-			default:
+				default:
 				$playertotal += ($card);
 				break;
-		}
+			}
 		} else {
 			$dealerhand[] = $card;
 			$dealersuit[] = $suit;
 			switch ($card) {
-			case 'Jack':
+				case 'Jack':
 				$dealertotal += 10;
 				break;
-			case 'Queen':
+				case 'Queen':
 				$dealertotal += 10;
 				break;
-			case 'King':
+				case 'King':
 				$dealertotal += 10;
 				break;
-			case 'Ace':
+				case 'Ace':
 				if($dealertotal > 10) {
 					$dealertotal += 1;
 				} else {
 					$dealertotal += 11;
 				}
 				break;
-			default:
+				default:
 				$dealertotal += ($card);
 				break;
-		}
+			}
 		}
 		
 		// Remove the card from the deck using the value of its index
 		switch ($card) {
 			case 'Jack':
-				unset($deck[$suit][9]);
-				break;
+			unset($deck[$suit][9]);
+			break;
 			case 'Queen':
-				unset($deck[$suit][10]);
-				break;
+			unset($deck[$suit][10]);
+			break;
 			case 'King':
-				unset($deck[$suit][11]);
-				break;
+			unset($deck[$suit][11]);
+			break;
 			case 'Ace':
-				unset($deck[$suit][12]);
-				break;
+			unset($deck[$suit][12]);
+			break;
 			default:
-				unset($deck[$suit][$card]);
-				break;
+			unset($deck[$suit][$card]);
+			break;
 		}
 	}
 
@@ -156,7 +177,7 @@ while((count($deck['Spades']) + count($deck['Hearts']) + count($deck['Clubs']) +
 
 	//compare hands
 
-	if($playertotal < $dealertotal) {
+	if($playertotal > $dealertotal) {
 		echo "You win!\n";
 		$purse += $bet;
 	} elseif($dealertotal < $playertotal) {
@@ -166,10 +187,7 @@ while((count($deck['Spades']) + count($deck['Hearts']) + count($deck['Clubs']) +
 
 
 
-	//echo $playertotal . PHP_EOL;
-	//echo $dealertotal . PHP_EOL;
 
-	$purse--;
 }
 
 echo "There are " . (count($deck['Spades']) + count($deck['Hearts']) + count($deck['Clubs']) +count($deck['Diamonds'])) . " cards left in the deck.\n";

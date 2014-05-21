@@ -24,9 +24,9 @@ function name_game($name) {
 		"{$name}! ";
 	} else {
 		$song .= "{$name}!" . PHP_EOL . 
-		"{$name}, {$name} bo B" . substr($name, 1) . PHP_EOL . 
-		"Bonana fanna fo F" . substr($name, 1) . PHP_EOL . 
-		"Fee fy mo M" . substr($name, 1) . "," . PHP_EOL . 
+		"{$name}, {$name} bo B" . strtolower(substr($name, 1)) . PHP_EOL . 
+		"Bonana fanna fo F" . strtolower(substr($name, 1)) . PHP_EOL . 
+		"Fee fy mo M" . strtolower(substr($name, 1)) . "," . PHP_EOL . 
 		"{$name}! ";
 	}
 

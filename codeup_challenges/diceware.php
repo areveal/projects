@@ -46,10 +46,6 @@ function diceware($num) {
 
 }
 
-// $what_is_it = diceware(strval(5));
-// echo "$what_is_it\n";
-
-
 
 
 fwrite(STDOUT, 'How many words do you want for your passphrase? ');

@@ -16,12 +16,12 @@ fwrite(STDOUT, 'What would you like to the list?: ');
 
 $new_input = get_input();
 
-fwrite($write, PHP_EOL . $new_input);
+fwrite($write, $new_input . PHP_EOL);
 
 fclose($write);
 
 $contents = file_get_contents($filename);
 
-echo $contents . PHP_EOL;
+echo $contents;
 
 ?>

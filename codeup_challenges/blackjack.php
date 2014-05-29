@@ -149,10 +149,10 @@ echoHand($dealer, 'Dealer',true);
 echoHand($player, 'Player');
 
 // allow player to "(H)it or (S)tay?" till they bust (exceed 21) or stay
-do{
+while($input != "H" && $input != "S" && getHandTotal($player) < 21){
 	fwrite(STDOUT, "(H)it or (S)tay? ");
 	$input = strtoupper(trim(fgets(STDIN)));
-}while($input != "H" && $input != "S");
+}
 
 while (getHandTotal($player) < 21 && $input == 'H') {
   // todo
